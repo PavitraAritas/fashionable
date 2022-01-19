@@ -14,7 +14,10 @@ function LeftLayout() {
   return (
     <Left>
       <Left.Profile>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU" alt="" />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
+          alt=""
+        />
         <div>
           <h4>Pavitra Aritas</h4>
           <p>@pav</p>
@@ -22,41 +25,74 @@ function LeftLayout() {
       </Left.Profile>
       <Left.Sidebar>
         <Left.MenuItems>
-          <span>
-            <i><HomeIcon /></i>
+          <a >
+            <span>
+              <i>
+                <HomeIcon />
+              </i>
+            </span>
             <h3>Home</h3>
-          </span>
-          <span>
-            <i><ExploreIcon /></i>
+          </a>
+          <a>
+            <span>
+              <i>
+                <ExploreIcon />
+              </i>
+            </span>
             <h3>Explore</h3>
-          </span>
-          <span>
-            <i><NotificationsIcon /></i>
+          </a>
+          <a>
+            <span>
+              <i>
+                <NotificationsIcon />
+              </i>
+            </span>
             <h3>Notifications</h3>
-          </span>
-          <span>
-            <i><MessagesIcon /></i>
+          </a>
+          <a>
+            {" "}
+            <span>
+              <i>
+                <MessagesIcon />
+              </i>
+            </span>
             <h3>Messages</h3>
-          </span>
-          <span>
-            <i><StoreIcon /></i>
+          </a>
+          <a>
+            <span>
+              <i>
+                <StoreIcon />
+              </i>
+            </span>
             <h3>Store</h3>
-          </span>
-          <span>
-            <i><WishListIcon /></i>
+          </a>
+          <a>
+            <span>
+              <i>
+                <WishListIcon />
+              </i>
+            </span>
             <h3>WishList</h3>
-          </span>
-          <span>
-            <i><ThemeIcon /></i>
+          </a>
+          <a>
+            <span>
+              <i>
+                <ThemeIcon />
+              </i>
+            </span>
             <h3>Theme</h3>
-          </span>
-          <span>
-            <i><SettingsIcon /></i>
+          </a>
+          <a>
+            <span>
+              <i>
+                <SettingsIcon />
+              </i>
+            </span>
             <h3>Settings</h3>
-          </span>
+          </a>
         </Left.MenuItems>
       </Left.Sidebar>
-      <button>Create Post</button>
+      <Left.Button>Create Post</Left.Button>
     </Left>
   );
 }
