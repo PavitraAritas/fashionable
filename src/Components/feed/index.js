@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Body, Stories, Story, PostBar, Post, Head, User, Photo} from './styles/feed'
+import {Body, Stories, Story, PostBar, Post, Head, User, Photo, ActionButtons} from './styles/feed'
 
 export default function Middle({children, ...restProps}){
     return <Body {...restProps}>{children}</Body>
@@ -32,4 +32,8 @@ Middle.User = function FeedUser({children, ...restProps}){
 
 Middle.Photo = function FeedPhoto({children, ...restProps}){
     return <Photo {...restProps}>{children}</Photo>
+}
+
+Middle.ActionButtons = function FeedActionButtons({children, ...restProps}){
+    return <ActionButtons {...restProps}>{children}</ActionButtons>
 }

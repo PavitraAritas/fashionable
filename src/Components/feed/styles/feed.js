@@ -158,12 +158,12 @@ position: relative;
     border-radius: var(--card-border-radius);
     overflow: hidden;
     margin: 0.7rem 0;
-    height: 300px;
-    width: 500px;
+    height: 400px;
+    width: 700px;
   }
   button {
     position: absolute;
-    z-index: 2;
+    z-index: 0;
     left: 3%;
     bottom: 10%;
     padding: 0.5rem;
@@ -178,3 +178,19 @@ position: relative;
     }
   }
 `;
+
+export const ActionButtons = styled.div`
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-size: 1.4rem;
+ margin: 0.6rem;
+
+ span {
+  padding-right: 1rem;
+ }
+` 
+
+
+
+

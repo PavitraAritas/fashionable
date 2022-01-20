@@ -10,7 +10,7 @@
   position: relative;
   top:2rem;
   display: grid;
-  grid-template-columns:18vh auto 20vw;
+  grid-template-columns:25vh auto 20vw;
   column-gap: 2rem;
   position: relative;
 }
