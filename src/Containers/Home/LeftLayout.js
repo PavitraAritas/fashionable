@@ -9,6 +9,7 @@ import WishListIcon from "@iconscout/react-unicons/icons/uil-heart-sign";
 import ThemeIcon from "@iconscout/react-unicons/icons/uil-palette";
 import SettingsIcon from "@iconscout/react-unicons/icons/uil-setting";
 import { Left } from "../../Components";
+import Theme from "../../Pages/Theme";
 
 function LeftLayout() {
   return (
@@ -77,7 +78,7 @@ function LeftLayout() {
           <a>
             <span>
               <i>
-                <ThemeIcon />
+                <ThemeIcon onClick={Theme}/>
               </i>
             </span>
             <h3>Theme</h3>
