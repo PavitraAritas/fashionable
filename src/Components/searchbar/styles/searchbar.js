@@ -27,6 +27,11 @@ export const Search = styled.div`
 
   input {
     outline: none;
+    border: none;
+  }
+
+  @media screen and (max-width: 992px){
+    display: none;
   }
 `;
 

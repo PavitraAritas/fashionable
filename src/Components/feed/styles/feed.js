@@ -2,6 +2,10 @@ import styled from "styled-components/macro";
 
 export const Body = styled.div`
   padding: 0;
+
+  @media screen and (max-width: 992px){
+    grid-column: 1/3;
+  }
 `;
 
 export const Stories = styled.div`

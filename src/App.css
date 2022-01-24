@@ -14,3 +14,18 @@
   column-gap: 2rem;
   position: relative;
 }
+
+@media screen and (max-width: 1200px) {
+  .Container {
+    width: 96%;
+    grid-template-columns: 5rem auto 30vw;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Container {
+    grid-template-columns: 0 auto 5rem;
+    gap: 0;
+  }
+}

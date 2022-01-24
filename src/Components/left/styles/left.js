@@ -4,6 +4,18 @@ export const Body = styled.div`
   height: max-content;
   position: sticky;
   top: var(--sticky-top-left);
+
+  @media (max-width: 1200px) {
+    width: 5rem;
+    z-index: 5;
+  }
+
+  @media screen and (max-width: 992px){
+    grid-column: 3/4;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
 `;
 
 export const Profile = styled.div`
@@ -20,6 +32,10 @@ export const Profile = styled.div`
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
   }
 `;
 
@@ -69,6 +85,10 @@ export const MenuItems = styled.a`
       &.active {
         color: var(--color-primary);
       }
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
     }
   }
 `;
@@ -90,5 +110,8 @@ export const Button = styled.div`
   &:hover {
     opacity: 0.8;
   }
-`;
 
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;

@@ -12,25 +12,26 @@ import useAuthListener from './Hooks/userAuth';
 function App() {
   const { user } = useAuthListener();
   return (
-    <BrowserRouter>
-      <Switch>
-        <IsUserRedirect user={user} loggedInPath="/" path="/auth">
-          <Auth />
-        </IsUserRedirect>
-        <ProtectedRoute user={user} path="/">
-          <Fragment>
+    // <BrowserRouter>
+    //   <Switch>
+    //     <IsUserRedirect user={user} loggedInPath="/" path="/auth">
+    //       <Auth />
+    //     </IsUserRedirect>
+    //     <ProtectedRoute user={user} path="/">
+    //       <Fragment>
             <div className="App">
               <SearchBar />
               <div className="Container">
                 <LeftLayout />
-                <Route path="/" exact><Feed /></Route>
+                <Feed />
+                {/* <Route path="/" exact></Route> */}
                 <RightLayout />
               </div>
             </div>
-          </Fragment>
-        </ProtectedRoute>
-      </Switch>{" "}
-    </BrowserRouter>
+    //       </Fragment>
+    //     </ProtectedRoute>
+    //   </Switch>{" "}
+    // </BrowserRouter>
   );
 }
 
