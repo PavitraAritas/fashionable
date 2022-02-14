@@ -1,4 +1,4 @@
-import { db, auth } from "./firebase";
+import { db, auth, storage } from "./firebase";
 import firebase from "firebase/compat/app";
 
 
@@ -36,6 +36,40 @@ async function signUp(email, username, password, name) {
     await auth.signOut();
   }
 
+  async function sendPost(name, message, userName, postImage, avatar, userId, likes){
+    let imageURL;
+    if (postImage) {
+      imageURL = await handleUpload(postImage);
+    }
+    if (!imageURL) {
+      imageURL = "";
+    }
+    await db.collection("posts").set({
+      displayName: name,
+      userName: userName,
+      verified: true,
+      text: message,
+      image: imageURL,
+      avatar: avatar ?? "",
+      userId: userId,
+      comments: 0,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      likes: likes
+
+    })
+  }
+
+  async function handleUpload(image) {
+    try {
+      const uploadTask = await storage.ref(`images/${image.name}`).put(image);
+      let imageUrl = await uploadTask.ref.getDownloadURL();
+      return imageUrl;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+
   export {
-      signIn, signOut, signUp
+      signIn, signOut, signUp, sendPost
   }
