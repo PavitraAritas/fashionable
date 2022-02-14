@@ -45,8 +45,9 @@ function Modal({showModal, setShowModal}) {
             <ModalPage.Wrapper showModal={showModal}>
               <ModalPage.Photo src="https://media.istockphoto.com/vectors/dress-icon-vector-id507081676?k=20&m=507081676&s=612x612&w=0&h=k1p9VA6YqPIwMEyj290EMrI1EtHIz4EK8yLf9YV7_DM=" alt='camera' />
               <ModalPage.Content>
-                <h1>Are you ready?</h1>
-                <p>Get exclusive access to our next launch.</p>
+                <h1>GRACE KARIN Women's Sleeveless Wrap V-Neck A-line Bridesmaid Cocktail Party Dress</h1>
+                <h3>⭐️⭐️⭐️⭐️⭐️      196979 ratings | 256 reviews</h3>
+                <p>Its a crazy valentino dress!</p>
                 <button>Join Now</button>
               </ModalPage.Content>
               <ModalPage.Button
