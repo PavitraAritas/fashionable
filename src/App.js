@@ -8,6 +8,7 @@ import RightLayout from "./Containers/Home/RightLayout";
 import SearchBar from "./Containers/Home/SearchBar";
 import Auth from './Pages/Auth';
 import useAuthListener from './Hooks/useAuth';
+import Profile from './Pages/Profile'
 
 function App() {
   const { user } = useAuthListener();
@@ -21,11 +22,12 @@ function App() {
           <Fragment>
             <div className="App">
               <SearchBar />
-              <div className="Container">
-                <LeftLayout />
-                <Feed />
+            \<div className="Container">
+                {/* <LeftLayout />
+                <Feed /> */}
+                <Profile />
                 {/* <Route path="/" exact></Route> */}
-                <RightLayout />
+                {/* <RightLayout /> */}
               </div>
             </div>
           </Fragment>

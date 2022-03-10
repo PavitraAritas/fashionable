@@ -8,7 +8,7 @@ import StoreIcon from "@iconscout/react-unicons/icons/uil-store";
 import WishListIcon from "@iconscout/react-unicons/icons/uil-heart-sign";
 import ThemeIcon from "@iconscout/react-unicons/icons/uil-palette";
 import SettingsIcon from "@iconscout/react-unicons/icons/uil-setting";
-import { Left } from "../../Components";
+import { Left } from "../../StyledComponents";
 import Theme from "../../Pages/Theme";
 
 function LeftLayout() {

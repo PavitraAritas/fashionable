@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeBox from '../Components/theme';
+import ThemeBox from '../StyledComponents/theme';
 
 function Theme() {
   return (

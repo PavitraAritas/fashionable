@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
-import { ModalPage } from '../Components';
+import { ModalPage } from '../StyledComponents';
 
 function Modal({showModal, setShowModal}) {
     // const modalRef = useRef();

@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import { AuthBody } from '../Components';
+import { AuthBody } from '../StyledComponents';
 import RepositoryContext from '../Context/RepositoryContext';
 
 
