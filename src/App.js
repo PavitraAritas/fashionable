@@ -2,13 +2,13 @@ import React, {Fragment} from "react";
 import "./App.css";
 import Feed from "./Containers/Home/Feed";
 import LeftLayout from "./Containers/Home/LeftLayout";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { IsUserRedirect, ProtectedRoute } from "./Helpers/Routes";
 import RightLayout from "./Containers/Home/RightLayout";
 import SearchBar from "./Containers/Home/SearchBar";
 import Auth from './Pages/Auth';
 import useAuthListener from './Hooks/useAuth';
-import Profile from './Pages/Profile'
+import Profile from './Pages/Profile';
 
 function App() {
   const { user } = useAuthListener();
@@ -22,12 +22,14 @@ function App() {
           <Fragment>
             <div className="App">
               <SearchBar />
-            \<div className="Container">
-                {/* <LeftLayout />
-                <Feed /> */}
-                <Profile />
+            <div className="Container">
+              <Route path="/" exact>
+              <LeftLayout />
+                <Feed />
                 {/* <Route path="/" exact></Route> */}
                 {/* <RightLayout /> */}
+              </Route>
+              <Route path="/profile"><Profile currentUser={user}/></Route>
               </div>
             </div>
           </Fragment>

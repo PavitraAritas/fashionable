@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useContext, useState } from "react";
 import HomeIcon from "@iconscout/react-unicons/icons/uil-home";
 import ExploreIcon from "@iconscout/react-unicons/icons/uil-compass";
 import NotificationsIcon from "@iconscout/react-unicons/icons/uil-bell";
@@ -10,11 +10,29 @@ import ThemeIcon from "@iconscout/react-unicons/icons/uil-palette";
 import SettingsIcon from "@iconscout/react-unicons/icons/uil-setting";
 import { Left } from "../../StyledComponents";
 import Theme from "../../Pages/Theme";
+import Profile from "../../Pages/Profile";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import RepositoryContext from "../../Context/RepositoryContext";
 
 function LeftLayout() {
+  var {repository} = useContext(RepositoryContext)
+  var [activeIcon, setActive] = useState("/");
+  var history = useHistory();
+
+  const onClick = (path) => {
+    setActive(path);
+  };
+
   return (
     <Left>
-      <Left.Profile>
+      <Left.Profile
+        active={activeIcon === "profile"}
+        link="/profile"
+        onClick={() => {
+          onClick("profile");
+          history.push("/profile");
+        }}
+      >
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
           alt=""
@@ -26,7 +44,7 @@ function LeftLayout() {
       </Left.Profile>
       <Left.Sidebar>
         <Left.MenuItems>
-          <a >
+          <a>
             <span>
               <i>
                 <HomeIcon />
@@ -78,7 +96,7 @@ function LeftLayout() {
           <a>
             <span>
               <i>
-                <ThemeIcon onClick={Theme}/>
+                <ThemeIcon onClick={Theme} />
               </i>
             </span>
             <h3>Theme</h3>
@@ -93,7 +111,7 @@ function LeftLayout() {
           </a>
         </Left.MenuItems>
       </Left.Sidebar>
-      <Left.Button>Create Post</Left.Button>
+      <Left.Button onClick={() => repository.signOut()}>Logout</Left.Button>
     </Left>
   );
 }

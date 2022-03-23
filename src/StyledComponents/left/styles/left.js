@@ -18,7 +18,7 @@ export const Body = styled.div`
   }
 `;
 
-export const Profile = styled.div`
+export const Profile = styled.button`
   /* padding: var(--card-padding); */
   background: var(--color-white);
   border-radius: var(--card-border-radius);
@@ -26,6 +26,13 @@ export const Profile = styled.div`
   align-items: center;
   column-gap: 1rem;
   width: 100%;
+  text-decoration: none;
+  border-style: none;
+  transition: all 300ms ease;
+
+  :hover{
+    background: var(--color-light);
+  }
 
   img {
     width: 2.7rem;

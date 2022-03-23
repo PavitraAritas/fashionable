@@ -100,7 +100,7 @@ function Feed() {
               </span>
             </Middle.Head>
             <Middle.Photo>
-              <img src="https://wallpaperaccess.com/full/702096.jpg" alt="" />
+              <img src="https://media.istockphoto.com/photos/full-length-size-studio-photo-portrait-of-beautiful-charming-good-picture-id1064179162?k=20&m=1064179162&s=612x612&w=0&h=F3Un4FVUwtrJQj5Y8RAcgWhVzEV0ypiG49KQ5a6REmc=" alt="" />
               <button onClick={openModal}>View Products</button>
             </Middle.Photo>
 

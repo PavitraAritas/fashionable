@@ -6,16 +6,18 @@ background-color: Black;
 z-index:10;
   img {
     height: 100vh;
-    width: 100vw;
+    width: max-width;
+    object-fit: cover;
     opacity:0.2;
     z-index: 5;
+    overflow-y: auto;
   }
 `;
 
 export const LoginCard = styled.div`
 background: var(--color-white);
 width: 480px;
-height: 600px;
+height: 550px;
 z-index: 10;
 position: absolute;
 top: 20%;
