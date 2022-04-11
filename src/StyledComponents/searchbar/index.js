@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Body, Container, Search, Create, CreateButton, Avatar } from "./styles/searchbar";
+import { Body, Container, Search, Create, CreateButton, Avatar, Badge } from "./styles/searchbar";
 
 export default function NavBar({ children, ...restProps }) {
   return <Body {...restProps}>{children}</Body>;
@@ -24,4 +24,8 @@ NavBar.Search = function NavBarSearch({ children, ...restProps }) {
 
   NavBar.Avatar = function NavBarAvatar({ children, ...restProps }) {
     return <Avatar {...restProps}>{children}</Avatar>;
+  };
+
+  NavBar.Badge = function NavBarBadge({ children, ...restProps }) {
+    return <Badge {...restProps}>{children}</Badge>;
   };

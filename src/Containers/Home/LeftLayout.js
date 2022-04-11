@@ -10,14 +10,17 @@ import ThemeIcon from "@iconscout/react-unicons/icons/uil-palette";
 import SettingsIcon from "@iconscout/react-unicons/icons/uil-setting";
 import { Left } from "../../StyledComponents";
 import Theme from "../../Pages/Theme";
-import Profile from "../../Pages/Profile";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import RepositoryContext from "../../Context/RepositoryContext";
+// import useProfile from "../../Hooks/useProfile";
+import LoadingPage from "../../Components/LoadingPage";
 
-function LeftLayout() {
-  var {repository} = useContext(RepositoryContext)
+function LeftLayout({ currentUser }) {
+  var { repository } = useContext(RepositoryContext);
   var [activeIcon, setActive] = useState("/");
   var history = useHistory();
+  // const { user } = useProfile(currentUser.uid);
+  const user = {name: 'Pavitra', userName: 'Pav'}
 
   const onClick = (path) => {
     setActive(path);
@@ -32,15 +35,19 @@ function LeftLayout() {
           onClick("profile");
           history.push("/profile");
         }}
-      >
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
-          alt=""
-        />
-        <div>
-          <h4>Pavitra Aritas</h4>
-          <p>@pav</p>
-        </div>
+      > {!user && <LoadingPage/>}
+        {user && (
+          <>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
+              alt=""
+            />
+            <div>
+              <h4>{user.name}</h4>
+              <p>{user.userName}</p>
+            </div>
+          </>
+        )}
       </Left.Profile>
       <Left.Sidebar>
         <Left.MenuItems>

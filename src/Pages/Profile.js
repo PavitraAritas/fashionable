@@ -4,30 +4,38 @@ import SettingIcon from "@iconscout/react-unicons/icons/uil-setting";
 import BackNavIcon from "@iconscout/react-unicons/icons/uil-angle-left-b";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import useProfile from "../Hooks/useProfile";
+import LoadingPage from "../Components/LoadingPage";
 
-function Profile({currentUser}) {
+function Profile({ currentUser }) {
   //   const tabs = [<TweetTab currentUser={currentUser} />];
   // const [activeTab, setactiveTab] = useState(0);
   // const tabLabels = ["Posts", "Videos", "Saved", "Tagged"];
   const [activeIcon, setActive] = useState("/");
   const history = useHistory();
-  const {user, updateUser} = useProfile(currentUser.uid);
+  const { user, updateUser } = useProfile(currentUser.uid);
 
-  console.log({user})
+  console.log({ user });
 
   const onClick = (path) => {
     setActive(path);
   };
 
-  if(user == null){
-    return <div>
-      Loading
-    </div>
+  if (user == null) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <LoadingPage />
+      </div>
+    );
   }
   return (
     <ProfileBody>
       <BackNavIcon
-      style={{marginLeft: "-110px"}}
+        style={{ marginLeft: "-110px" }}
         active={activeIcon === "/"}
         path="/"
         onClick={() => {
@@ -39,7 +47,7 @@ function Profile({currentUser}) {
         <ProfileBody.Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU" />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div>
-            <h2>{user}</h2>
+            <h2>{user.name}</h2>
             <button>Edit Profile</button>
             <SettingIcon />
           </div>
@@ -48,7 +56,7 @@ function Profile({currentUser}) {
             <text>456 followers</text>
             <text>300 following</text>
           </div>
-          <div>{user}</div>
+          <div>{user.userName}</div>
         </div>
       </ProfileBody.Header>
       <ProfileBody.Highlight src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU" />

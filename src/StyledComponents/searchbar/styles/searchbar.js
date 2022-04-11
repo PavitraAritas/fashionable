@@ -19,18 +19,22 @@ export const Container = styled.div`
 
 export const Search = styled.div`
   display: flex;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
+  gap: 5px;
   background: var(--color-light);
   border-radius: var(--border-radius);
-  padding:  0.6rem 10rem;
+  width:fit-content;
+  padding: 0.6rem;
+  padding-right: 10rem;
+  /* padding: 0.6rem 10rem; */
 
   input {
     outline: none;
     border: none;
   }
 
-  @media screen and (max-width: 992px){
+  @media screen and (max-width: 992px) {
     display: none;
   }
 `;
@@ -62,4 +66,15 @@ export const Avatar = styled.img`
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
+`;
+
+export const Badge = styled.div`
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+  padding: 1px 3px;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;

@@ -6,7 +6,7 @@ import CommentIcon from "@iconscout/react-unicons/icons/uil-comment-dots";
 import BookmarkIcon from "@iconscout/react-unicons/icons/uil-bookmark-full";
 import ShareIcon from "@iconscout/react-unicons/icons/uil-share-alt";
 import AddImage from "@iconscout/react-unicons/icons/uil-image-plus";
-import Modal from "../../Pages/Modal";
+import ModalOne from "../../Pages/ModalOne";
 
 function Feed() {
   const [showModal, setShowModal] = useState(false);
@@ -24,46 +24,40 @@ function Feed() {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
               alt=""
             />
-            <p>Your Story</p>
           </Middle.Story>
           <Middle.Story>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
               alt=""
             />
-            <p>Your Story</p>
           </Middle.Story>
           <Middle.Story>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
               alt=""
             />
-            <p>Your Story</p>
           </Middle.Story>
           <Middle.Story>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
               alt=""
             />
-            <p>Your Story</p>
           </Middle.Story>
           <Middle.Story>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
               alt=""
             />
-            <p>Your Story</p>
           </Middle.Story>
           <Middle.Story>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
               alt=""
             />
-            <p>Your Story</p>
           </Middle.Story>
         </Middle.Stories>
 
-        <Middle.PostBar>
+        <Middle.PostBar onClick={openModal}>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F3e5C2_4KVWpSSvmBDVb8iPGyRnDB5DVPA&usqp=CAU"
             alt=""
@@ -73,7 +67,15 @@ function Feed() {
             placeholder="What's on your mind, pav?"
             id="create-post"
           />
-          <AddImage style={{padding:"6px 10px", background:"var(--color-primary)", borderRadius:"50%", marginRight:"0.5rem", color:"white"}}/>
+          <AddImage
+            style={{
+              padding: "6px 10px",
+              background: "var(--color-primary)",
+              borderRadius: "50%",
+              marginRight: "0.5rem",
+              color: "white",
+            }}
+          />
           <button type="submit" value="Post">
             Post
           </button>
@@ -88,11 +90,12 @@ function Feed() {
                 />
                 <div className="ingo">
                   <h3 style={{ margin: "0", paddingBottom: "0.2rem" }}>
-                    Sylvester Stone
+                    Shsdhfhsdgf
                   </h3>
                   <small>Toronto, 25 MINUTES AGO</small>
                 </div>
               </Middle.User>
+
               <span className="edit">
                 <i>
                   <EditIcon />
@@ -100,7 +103,10 @@ function Feed() {
               </span>
             </Middle.Head>
             <Middle.Photo>
-              <img src="https://media.istockphoto.com/photos/full-length-size-studio-photo-portrait-of-beautiful-charming-good-picture-id1064179162?k=20&m=1064179162&s=612x612&w=0&h=F3Un4FVUwtrJQj5Y8RAcgWhVzEV0ypiG49KQ5a6REmc=" alt="" />
+              <img
+                src="https://media.istockphoto.com/photos/full-length-size-studio-photo-portrait-of-beautiful-charming-good-picture-id1064179162?k=20&m=1064179162&s=612x612&w=0&h=F3Un4FVUwtrJQj5Y8RAcgWhVzEV0ypiG49KQ5a6REmc="
+                alt=""
+              />
               <button onClick={openModal}>View Products</button>
             </Middle.Photo>
 
@@ -200,7 +206,7 @@ function Feed() {
           </Middle.Post>
         </div>
       </Middle>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <ModalOne showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 }

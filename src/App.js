@@ -9,6 +9,7 @@ import SearchBar from "./Containers/Home/SearchBar";
 import Auth from './Pages/Auth';
 import useAuthListener from './Hooks/useAuth';
 import Profile from './Pages/Profile';
+import Cart from "./Pages/Cart";
 
 function App() {
   const { user } = useAuthListener();
@@ -24,12 +25,13 @@ function App() {
               <SearchBar />
             <div className="Container">
               <Route path="/" exact>
-              <LeftLayout />
+              <LeftLayout currentUser={user}/>
                 <Feed />
                 {/* <Route path="/" exact></Route> */}
                 {/* <RightLayout /> */}
               </Route>
               <Route path="/profile"><Profile currentUser={user}/></Route>
+              
               </div>
             </div>
           </Fragment>

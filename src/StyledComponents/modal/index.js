@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Background, Wrapper, Photo, Content, CloseModalButton} from "./styles/modal";
+import {Background, Wrapper, Photo, Content, CloseModalButton, Box} from "./styles/modalOne";
 
 export default function ModalPage({ children, ...restProps }) {
   return <Background {...restProps}>{children}</Background>;
@@ -18,8 +18,10 @@ ModalPage.Photo = function ModalPhoto({ children, ...restProps }) {
     return <Content {...restProps}>{children}</Content>;
   };
 
-  ModalPage.Button = function ModalContent({ children, ...restProps }) {
+  ModalPage.Button = function ModalButton({ children, ...restProps }) {
     return <CloseModalButton {...restProps}>{children}</CloseModalButton>;
   };
 
-
+  ModalPage.Box = function ModalBox({ children, ...restProps }) {
+    return <Box {...restProps}>{children}</Box>;
+  };

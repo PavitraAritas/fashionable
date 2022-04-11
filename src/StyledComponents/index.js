@@ -5,3 +5,4 @@ export { default as ModalPage} from "./modal/index"
 export { default as AuthBody } from "./auth/index"
 export { default as ThemeBox} from "./auth/index"
 export { default as ProfileBody} from "./profile/index";
+export { default as SideBar} from "./cart/index";
