@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { ModalPage } from "../StyledComponents";
 
 function ModalOne({ showModal, setShowModal, props }) {
   // const modalRef = useRef();
+  var [active, setActive] = useState("/");
+  var history = useHistory();
 
+  const onClick = (path) => {
+    setActive(path);
+  };
   const animation = useSpring({
     config: {
       duration: 250,
@@ -64,9 +70,11 @@ function ModalOne({ showModal, setShowModal, props }) {
                 </h1>
                 <h3>⭐️⭐️⭐️⭐️⭐️ 196979 ratings | 256 reviews</h3>
                 <p>Its a crazy valentino dress!</p>
-                <div style={{fontSize:"170%"}}>₹699<sup style={{fontSize:"15px"}}>00</sup></div>
+                <div style={{ fontSize: "170%" }}>
+                  ₹699<sup style={{ fontSize: "15px" }}>00</sup>
+                </div>
                 <div style={{ display: "flex", gap: "5px" }}>
-                <ModalPage.Box style={{backgroundColor: "orange"}}/>
+                  <ModalPage.Box style={{ backgroundColor: "orange" }} />
                   <box
                     style={{
                       height: "30px",
@@ -110,7 +118,14 @@ function ModalOne({ showModal, setShowModal, props }) {
                 >
                   Add to Cart
                 </button>
-                <button onClick={{}}>Order Now</button>
+                <button
+                  onClick={() => {
+                    onClick("checkout");
+                    history.push("/checkout");
+                  }}
+                >
+                  Order Now
+                </button>
               </ModalPage.Content>
               <ModalPage.Button
                 aria-label="Close modal"

@@ -10,6 +10,7 @@ import Auth from './Pages/Auth';
 import useAuthListener from './Hooks/useAuth';
 import Profile from './Pages/Profile';
 import Cart from "./Pages/Cart";
+import Checkout from "./Pages/Checkout";
 
 function App() {
   const { user } = useAuthListener();
@@ -32,6 +33,7 @@ function App() {
               </Route>
               <Route path="/profile"><Profile currentUser={user}/></Route>
               
+              <Route path="/checkout"><Checkout/></Route>
               </div>
             </div>
           </Fragment>

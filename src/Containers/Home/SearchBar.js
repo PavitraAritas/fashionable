@@ -3,13 +3,21 @@ import { NavBar } from "../../StyledComponents";
 import UilReact from "@iconscout/react-unicons/icons/uil-search";
 import CartButton from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import Cart from "../../Pages/Cart"
+import { useHistory } from "react-router-dom";
 
 function SearchBar() {
   const [showCart, setShowCart] = useState(false);
+  var [active, setActive] = useState("/");
 
   const openCart = () => {
     setShowCart(true);
     console.log("cart")
+  };
+
+  var history = useHistory();
+
+  const onClick = (path) => {
+    setActive(path);
   };
 
   return (
@@ -17,7 +25,10 @@ function SearchBar() {
     <Cart showCart={showCart} setShowCart={setShowCart}/>
     <NavBar>
       <NavBar.Frame>
-        <h2>FashiONable</h2>
+        <h2 onClick={() => {
+          onClick("home");
+          history.push("/");
+        }}>FashiONable</h2>
         <NavBar.Search>
           <UilReact className="uil uil-search" size="20"></UilReact>
           <input
